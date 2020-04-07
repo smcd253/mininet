@@ -30,6 +30,7 @@ class MyTopo(Topo):
 		self.k = k
 		switch = self.addSwitch( 's1' )
 		for h in irange( 1, k ):
+			print("building host ", h)
 			host = self.addHost( 'h%s' % h )
 			self.addLink( host, switch )
 
