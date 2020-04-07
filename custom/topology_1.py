@@ -10,6 +10,7 @@ Three devices on same network and all connected by a switch
 """
 
 from mininet.topo import Topo
+from mininet.util import irange
 
 class MyTopo(Topo):
     "Simple topology example."
@@ -24,5 +25,12 @@ class MyTopo(Topo):
 	[555 Comments]
 	Your topology file for scenario 1. Define all the required devices here.
 	"""
+	def build( self, k=3, **_opts ):
+        "k: number of hosts"
+        self.k = k
+        switch = self.addSwitch( 's1' )
+        for h in irange( 1, k ):
+            host = self.addHost( 'h%s' % h )
+            self.addLink( host, switch )
 
 topos = { 'mytopo':(lambda:MyTopo())}
