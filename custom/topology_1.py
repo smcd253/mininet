@@ -18,7 +18,7 @@ class MyTopo(Topo):
 	def __init__(self):
 		#Initialize the topology
 		Topo.__init__(self)
-		self.build(self, 3)
+		self.build(self, 3, None)
 	
 	"""
 	[555 Comments]
