@@ -13,9 +13,9 @@ from mininet.topo import Topo
 from mininet.util import irange
 
 class MyTopo(Topo):
-    "Simple topology example."
+	"Simple topology example."
 
-    def __init__(self):
+	def __init__(self):
 	"Create custom topology."
 		self.build(self, k = 3, None)
 
