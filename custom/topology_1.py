@@ -18,20 +18,19 @@ class MyTopo(Topo):
 	def __init__(self):
 		#Initialize the topology
 		Topo.__init__(self)
-		self.build(self, 3, None)
 	
 	"""
 	[555 Comments]
 	Your topology file for scenario 1. Define all the required devices here.
 	"""
 	
-	def build(self, k):
+	def build(self, k = 3):
 		"k: number of hosts"
-		Topo.k = k
-		switch = Topo.addSwitch( 's1' )
+		self.k = k
+		switch = self.addSwitch( 's1' )
 		for h in irange( 1, k ):
 			print("building host ", h)
-			host = Topo.addHost( 'h%s' % h )
-			Topo.addLink( host, switch )
+			host = self.addHost( 'h%s' % h )
+			self.addLink( host, switch )
 
 topos = { 'mytopo':(lambda:MyTopo())}
