@@ -19,7 +19,7 @@ class MyTopo(Topo):
 		self.build(3)
 
 	#Initialize the topology
-	Topo.__init__(None, None)
+	Topo.__init__(Topo, None, None)
 	
 	"""
 	[555 Comments]
