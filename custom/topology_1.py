@@ -13,10 +13,11 @@ from mininet.topo import Topo
 from mininet.util import irange
 
 class MyTopo(Topo):
-    "Simple topology example."
+	"Simple topology example."
 
-    def __init__(self):
 	"Create custom topology."
+	def __init__(self):
+		self.build(3)
 
 	#Initialize the topology
 	Topo.__init__(self)
@@ -25,7 +26,8 @@ class MyTopo(Topo):
 	[555 Comments]
 	Your topology file for scenario 1. Define all the required devices here.
 	"""
-	def build( self, k=3, **_opts ):
+
+	def build( self, k=3):
 		"k: number of hosts"
 		self.k = k
 		switch = self.addSwitch( 's1' )
