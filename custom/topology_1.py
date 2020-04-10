@@ -29,7 +29,7 @@ class MyTopo(Topo):
 		self.k = k
 		switch = self.addSwitch( 's1' )
 		for h in irange( 1, k ):
-			host = self.addHost( 'h%s' % h )
+			host = self.addHost( 'h%s' % h, ip = "10.0.0.%s/24" % h + 1, defaultRoute = "via 10.0.0.1" )
 			self.addLink( host, switch )
 
 topos = { 'mytopo':(lambda:MyTopo())}
