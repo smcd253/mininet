@@ -24,5 +24,12 @@ class MyTopo(Topo):
 	[555 Comments]
 	Your topology file for scenario 2. Define all the required devices here.
 	"""
+	def build(self, k = 3):
+		"k: number of hosts"
+		self.k = k
+		switch = self.addSwitch( 'r1' )
+		for h in irange( 1, k ):
+			host = self.addHost( 'h%s' % h, ip = "%s0.0.0.2/24" % str(h + 1), defaultRoute = "via %s0.0.0.1" % str(h + 1) )
+			self.addLink( host, switch )
 
 topos = { 'mytopo':(lambda:MyTopo())}
