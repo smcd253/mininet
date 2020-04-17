@@ -16,9 +16,8 @@ class MyTopo(Topo):
 
     def __init__(self):
 	"Create custom topology."
-
-	#Initialize the topology
-	Topo.__init__(self)
+		#Initialize the topology
+		Topo.__init__(self)
 	
 	"""
 	[555 Comments]
