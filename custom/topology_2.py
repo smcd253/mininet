@@ -10,6 +10,7 @@ Three devices on different networks and all connected by a single router
 """
 
 from mininet.topo import Topo
+from mininet.util import irange
 
 class MyTopo(Topo):
 	"Simple topology example."
