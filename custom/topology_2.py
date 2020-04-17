@@ -12,10 +12,9 @@ Three devices on different networks and all connected by a single router
 from mininet.topo import Topo
 
 class MyTopo(Topo):
-    "Simple topology example."
+	"Simple topology example."
 
-    def __init__(self):
-	"Create custom topology."
+	def __init__(self):
 		#Initialize the topology
 		Topo.__init__(self)
 	
