@@ -26,7 +26,7 @@ class MyTopo(Topo):
 	def build(self, k = 3):
 		"k: number of hosts"
 		self.k = k
-		switch = self.addSwitch( 'r1', interfaces = {"10.0.0.1", "20.0.0.1", "30.0.0.1"})
+		switch = self.addSwitch( 'r1')
 		for h in irange( 1, k ):
 			host = self.addHost( 'h%s' % h, ip = "%s0.0.0.2/24" % str(h), defaultRoute = "via %s0.0.0.1" % str(h) )
 			self.addLink( host, switch )
