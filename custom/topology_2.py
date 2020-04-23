@@ -30,7 +30,7 @@ class MyTopo(Topo):
 		for h in irange( 1, k ):
 			host = self.addHost( 'h%s' % h, ip = "%s0.0.0.2/24" % str(h), defaultRoute = "via %s0.0.0.1" % str(h) )
 			self.addLink( host, switch )
-		test_host = self.addHost("30.0.0.3/24", defaultRouter = "via 10.0.0.1")
+		test_host = self.addHost("h4", "30.0.0.3/24", defaultRouter = "via 10.0.0.1")
 		self.addLink(test_host, switch)
 
 topos = { 'mytopo':(lambda:MyTopo())}
