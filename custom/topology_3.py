@@ -48,12 +48,12 @@ class MyTopo(Topo):
 				self.addLink( host, seight )
 
 		# links
-		self.addLink( rone, sfour, 1 )
-		self.addLink( rone, rtwo, 2, 3 )
-		self.addLink( rone, rthree, 3, 3 )
-		self.addLink( rtwo, sfive, 1 )
-		self.addLink( rtwo, ssix, 2 )
-		self.addLink( rthree, sseven, 1 )
-		self.addLink( rthree, seight, 2 )
-
+		self.addLink( rone, sfour )
+		self.addLink( rtwo, sfive )
+		self.addLink( rtwo, ssix )
+		self.addLink( rthree, sseven )
+		self.addLink( rthree, seight )
+		self.addLink( rone, rtwo )
+		self.addLink( rone, rthree )
+		
 topos = { 'mytopo':(lambda:MyTopo())}
